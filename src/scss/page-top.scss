@@ -1,0 +1,318 @@
+.page-top {
+    border-top: 1px solid $border1;
+    
+    &__title {
+        padding: 24px 0;
+    }
+    
+    &__repair-checkstatus {
+        display: none;
+    }
+    
+    &__repair-button {
+        background: url('../img/img-btn/repair.svg') no-repeat;
+    }
+    
+    &__checkstatus-button {
+        background: url('../img/img-btn/checkstatus.svg') no-repeat;
+    }
+    
+// --------nav---------
+
+    &__nav {
+        overflow: scroll;
+/* Решение для IE, Edge и Firefox */
+        -ms-overflow-style: none; 
+        scrollbar-width: none; 
+            &::-webkit-scrollbar {
+                display: none;
+            }
+    }
+    
+    &__list {
+        display: flex;
+    padding: 0 0 24px 16px;
+    }
+    
+    &__nav-item {
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    &__nav-link {
+        font-family: 'TT Lakes Medium', Arial, sans-serif;
+        color: $text2;
+        white-space: nowrap;
+        padding: 8px 16px; &:hover{
+        background-image: linear-gradient(90deg, #89cac0 50%, transparent 50%), linear-gradient(90deg, #89cac0 50%, transparent 50%), linear-gradient(0, #89cac0 50%, transparent 50%), linear-gradient(0, #89cac0 50%, transparent 50%);
+        background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+        background-size: 10px 2px, 10px 2px, 2px 10px, 2px 10px;
+        animation: marching-ants 400ms infinite linear;
+    }
+    }
+    &__nav-item--active {
+        border: 2px solid $border4;
+        background:$background;
+
+    }
+    @keyframes marching-ants {
+        0% {
+            background-position: 0 0, 10px 100%, 0 10px, 100% 0;
+        }
+        100% {
+            background-position: 10px 0, 0 100%, 0 0, 100% 10px;
+        }
+    }
+// --------subtitle---------
+
+
+    &__subtitle-item{
+        height: 30vmin;
+        overflow: hidden;
+        animation-name: showTextClose;
+        animation-direction: alternate;
+        animation-duration: 1s;
+        animation-fill-mode: both;
+            &--active{
+                animation-name: showTextOpen;
+                animation-direction: alternate;
+                animation-duration: 1s;
+                animation-fill-mode: both;
+            }  
+    }
+
+    
+    &__subtitle-text {
+        font-family: 'TT Lakes Light', Arial, sans-serif;
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: 0.2px;
+        padding: 0 16px 0 16px;
+        &:last-child{
+            margin-top: 20px;
+        }
+    }
+    
+    &__subtitle-img {
+        width: 100%;
+        padding: 12px 0 24px 0;
+    }
+    }
+    .text {
+        font-family: 'TT Lakes Light', Arial, sans-serif;
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: 0.2px;
+    }
+    
+    
+@media(min-width: 768px) {
+    .page-top {
+        padding-bottom: 40px;
+        
+        &__title {
+            padding: 24px 0 32px 0;
+            &::before {
+                content: '';
+                width: 4px;
+                height: 40px;
+                background: $border3;
+                margin-right: 20px;
+                border-radius:0 4px 4px 0;
+            }
+        }
+        
+// ----------nav---------
+
+        &__list {
+            padding: 0 0 32px 24px;
+        }
+
+// ------------subtitle----------
+
+        
+        &__subtitle {
+            display: flex;
+            margin-right: 24px;
+            padding: 0;
+        }
+        
+        &__subtitle-item {
+            padding: 0 48px 0px 24px;
+            height: 20vmin;
+            animation-name: showTextClose;
+            animation-direction: alternate;
+            animation-duration: 1s;
+            animation-fill-mode: both;
+                &--active{
+                    animation-name: showTextOpen;
+                    animation-direction: alternate;
+                    animation-duration: 1s;
+                    animation-fill-mode: both;
+                }  
+        }
+        &__subtitle-text {
+            font-family: 'TT Lakes Light', Arial, sans-serif;
+            font-size: 14px;
+            line-height: 18px;
+            letter-spacing: 0.2px;
+            padding: 0 ;
+        }
+        
+        &__subtitle-img {
+            min-width: 360px;
+            height: auto;
+            padding: 0;
+            border-radius: 10px;
+        }
+    }
+}
+
+@media(min-width: 1366px){
+    .page-top {
+        padding-bottom: 40px;
+        max-width: 1120px;
+        margin: 0;
+        border: 0;
+        &__about {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        &__title {
+            padding: 42px 0 0 0;
+                &::before {
+                    content: '';
+                    margin-right: 32px;
+                    padding-top: 42px;
+                }
+        }
+        
+        &__repair-checkstatus {
+            display: flex;
+            padding: 42px 32px 0 0;
+        }
+        
+        &__repair {
+            display: flex;
+            padding-right: 32px;
+                &::before {
+                    content: 'Оставить заявку';
+                    color:$text1;
+                    font-family: 'TT Lakes Medium', Arial, sans-serif;
+                    white-space: nowrap;
+                    align-self: center;
+                    padding-right: 8px;
+                }
+        }
+        
+        &__checkstatus {
+            display: flex;
+            &::before {
+                content: 'Статус ремонта';
+                color:$text1;
+                font-family: 'TT Lakes Medium', Arial, sans-serif;
+                white-space: nowrap;
+                align-self: center;
+                padding-right: 8px;
+            }
+        }
+        
+// ---------nav----------
+
+        &__list {
+            display: flex;
+            padding: 10px 37px 10px 32px;
+            white-space: normal;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        &__nav-item {
+            &:last-child {
+                margin-right: auto;
+            }
+        }
+
+// ------------subtitle----------
+
+        
+        &__subtitle-item {
+            padding: 0px 36px 13px 34px;
+            height: 160px;
+            &--active {
+                height: 100%;
+                }
+        }
+        
+        &__subtitle-bg {
+            display: inline-block;
+        }
+        
+        &__subtitle-img {
+            width: auto;
+            height: auto;
+            border-radius: 10px;
+        }
+    }
+}
+
+
+@keyframes showTextOpen{
+    0% {
+        height: 30vmin;
+    }
+    100%{
+        height: 75vmin;
+    }
+}
+
+@keyframes showTextClose{
+    0% {
+        height: 75vmin;
+    }
+    100%{
+        height: 30vmin;
+    }
+}                                    
+
+@media(min-width: 768px) {
+    @keyframes showTextOpen{
+        0% {
+            height: 20vmin;
+        }
+        100%{
+            height: 35vmin;
+        }
+    }
+    
+    @keyframes showTextClose{
+        0% {
+            height: 35vmin;
+        }
+        100%{
+            height: 20vmin;
+        }
+    }
+
+}
+
+@media (min-width: 1000px) {
+    @keyframes showTextOpen{
+        0% {
+            height: 165px;
+        }
+        100%{
+            height: 350px;
+        }
+    }
+    
+    @keyframes showTextClose{
+        0% {
+            height: 350px;
+        }
+        100%{
+            height: 165px;
+        }
+    }
+}

@@ -1,0 +1,242 @@
+
+html {
+    font-family: 'TT Lakes Regular';
+    line-height: 24px;
+    font-size: 16px;
+    letter-spacing: -0.2px;
+    color: $text1;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    min-width: 320px; 
+}
+
+ul,
+li {
+    display: block;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+span {
+    display: block;
+}
+
+button {
+    display: block;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    color:$text1;
+}
+
+a {
+    text-decoration: none;
+    color:$text1;
+}
+
+
+// --------null list--------
+
+
+
+.button{
+    width: 40px;
+    height: 40px;
+    &:hover{
+        transition: all 0.8s ;
+        transform: rotate(360deg) scale(1.2);
+        box-shadow:  0 1px 10px red;
+        border-radius: 50%;
+    }
+}   
+
+
+// ------- позиционирование header + позиционирование блоков при большом разрешении ----------
+
+.wrapper{
+    background: $main-background;
+    &__header{
+        position: sticky;
+        z-index: 8;
+        top: 0px;
+    }
+}
+@media(min-width: 1366px){
+    .wrapper{
+        display: flex;
+        &__basic{
+            margin-right: auto;
+        }
+        &__main-menu{
+            margin-left: auto;
+            }
+        &__basic{
+            margin-left: 275px;
+        }
+    }
+}
+
+// -------- кнопка показать все --------
+
+.show-all {
+    display: flex;
+    position:relative;
+    height: 24px;
+    width: 125px;
+    color: $text1;
+    margin: 16px 0 0 24px; 
+    &__text {
+        margin-left: 10px;
+    }
+    &__arrow{
+        margin-top: 2px;
+    }
+        &:hover &__arrow{
+            animation-name: moreArrow;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+    
+    @media(min-width: 768px) {
+        margin: 10px 10px 10px 33px;
+    }
+    @media(min-width: 1366px){
+        margin: 10px 10px 10px 40px;
+    }
+
+}
+        
+@keyframes moreArrow {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(4px) scale(1.3);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+// ----------- главный заголовок страницы ------------
+
+.main-title{
+    font-family: 'TT Lakes Bold', Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    font-size: 28px;
+    letter-spacing: -0.6px;
+    &::before {
+        content: '';
+        width: 4px;
+        height: 40px;
+        background: $border3;
+        margin-right: 12px;
+        border-radius:0 4px 4px 0;
+    }
+}
+
+// -------- подзаголовок слайдеров ---------
+
+.subtitle {
+    font-family: 'TT Lakes Light', Arial, sans-serif;
+    color: $text2;
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(270deg, $main-background 0%, $background 98.61%);
+    border-top: 1px solid $border1;
+    &__text {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+}
+@media (min-width: 768px) {
+    .subtitle {
+        padding: 16px 24px;
+    }
+}
+@media (min-width: 1366px) {
+    .subtitle {
+        padding: 16px 32px;
+    }
+}
+
+
+// ------- картинки кнопки в слайдерах -------
+// .swiper-lazy-preloader{
+//     width:40px;
+//     height:40px;
+//     }
+.button-arrow {
+    background:url('../img/img-btn/botton-image.svg') no-repeat ;
+    }
+// ---------- блюр для бургера и модальных окон ----------------
+
+.shadow__menu, .shadow__modal{
+    position: fixed;
+    border:none;
+    display: block;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9;
+    opacity: 0;
+    transition: opacity 0.8s ease 0s;
+    background-color: $main-background;
+        &--activ{
+            pointer-events: auto;
+            opacity: 0.96;
+        }
+        &--activ-menu{
+            z-index: 20;
+            pointer-events: auto;
+            opacity: 0.96;
+        }
+    }
+
+
+// ---------- скрытие label для читалок ----------
+
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        border: 0;
+    }
+
+
+    .link{
+        &:hover{
+            transition: all 0.4s;
+            transform: translate(-2px, -2px);
+            text-shadow: 5px 5px 5px $text2 ;
+        }
+    }

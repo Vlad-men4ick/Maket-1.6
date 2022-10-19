@@ -1,0 +1,206 @@
+
+.main-menu {
+    height:100%;
+    &__container{
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    transition: all 0.8s ease 0s;
+    opacity: 0;
+    visibility: hidden;
+    position:absolute;
+    z-index:2;
+    background:$background;
+    width: 320px;
+    padding: 0 0 32px 16px;
+    box-shadow: -2px 0px 4px rgba(69, 79, 126, 0.02), 16px 0px 52px rgba(14, 24, 80, 0.2);
+        &--active{
+        visibility: visible;
+        opacity: 1;
+        position: absolute;
+        z-index: 20;
+        transition: all 0.8s;
+    }
+}
+    &__header {
+        display: flex;
+        align-items: center;
+        padding: 0 16px 0 0;
+        height:86px;
+    }
+    &__logo{
+        margin-left: 16px;
+    }
+    &__close-burger-btn {
+        background: url('../img/img-btn/close-burger.svg');
+    }
+    &__search-btn {
+        margin-left: auto;
+        background: url('../img/img-btn/search.svg');
+    }
+    
+    // --------nav--------
+    
+    &__nav-list {
+        position: relative;
+        margin-top: 30px;
+    }
+    
+    &__nav-item {
+        margin-bottom: 32px;
+        &:hover{
+            transition: all 0.3s;
+            text-shadow: 5px 5px 5px $text2 ;
+        }
+        &>a{ 
+            color:$text1;
+        }
+            &:last-child{
+                margin-bottom: 0;
+            }
+    }
+    
+    &__nav-item--active {
+        position: relative;
+        &>a{ 
+                color:$text2;
+            }
+        ::before{
+            content: '';
+            position: absolute;
+            left: -16px;
+            top:-6px;
+            width: 4px;
+            height: 32px;
+            border-radius: 0 4px 4px 0 ;
+            background: $border3;    
+        }
+    }
+
+    // ---------footer-contacts---------
+
+    &__footer {
+        margin-top: 32px;
+    }
+    
+    
+    &__contacts-btn {
+        display: flex;
+        margin-bottom: 16px;
+    }
+    
+    &__call {
+        padding-right:16px;
+    }
+    
+    &__call-btn {
+        background: url('../img/img-btn/call.svg');
+    }
+    
+    &__chat {
+        padding-right:16px;
+    }
+    
+    &__chat-btn {
+        background: url('../img/img-btn/chat.svg');
+    }
+    
+    &__profile {
+        padding-right: 0;
+    }
+    
+    &__profile-btn {
+        background: url('../img/img-btn/profile.svg');
+    }
+    
+    &__email {
+        margin-bottom: 12px;
+    }
+    
+    &__tel {
+        margin-bottom: 8px;
+    }
+    
+    &__tel-link {
+        font-family: 'TT Lakes Bold';
+        font-size: 24px;
+        line-height: 32px;
+        letter-spacing: -0.6px;
+        text-align: left;
+    }
+    
+// ------lanruage-------
+
+    &__language {
+        display: flex;
+    }
+    
+    &__language-link {
+        &:nth-child(2){
+            margin: 0 7px 0 7px ;
+        }
+    }
+    
+    &__language-link--active {
+        color:$text2;
+    }
+}   
+
+@media(min-width: 360px){
+    .main-menu{
+    &__container{
+    padding: 0 0 32px 24px;
+    width: 360px;
+    }
+    &__nav-item--active {
+        ::before{
+            content: '';
+            left: -24px;
+        }
+    }
+    }   
+    &__header {
+        padding: 0 24px 0 0;
+    }
+    }
+
+
+@media(min-width: 768px){
+    .main-menu{
+        &__container{
+        padding: 0 0 32px 24px;
+        width:296px;
+            
+        }
+        &__footer {
+            margin-top: 100px;
+            }
+    }
+}
+
+@media(min-width: 1366px){
+    .main-menu{
+        &__container{
+        opacity: 1;
+        visibility:visible ;
+        display: flex;
+        position:fixed;
+        top: 0;
+        width: 274px;
+        height: 100%;
+        box-shadow:0 0 0;
+        }
+        &__close-burger-btn{
+            display: none;
+        }
+        &__header {
+            padding: 35px 29px 0 0;
+        }
+        &__footer {
+            margin-top: auto;
+            }
+    }
+}
+
+

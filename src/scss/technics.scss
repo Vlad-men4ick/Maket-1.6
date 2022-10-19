@@ -1,0 +1,172 @@
+
+.technics {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+    &__title{
+        margin-bottom: 16px;
+    }
+    &__list {
+        margin:0 0 16px 0;
+    }
+    &__item {
+        width: 240px;
+        height: 160px;
+    }
+    &__link {
+        width: 100%;
+        height: 100%;
+    }
+    &__item-container { 
+        display: flex;
+        width: 238px;
+        height: 160px;
+        border: 1px solid $border2;
+        border-radius: 6px;
+        background: $background;
+    }
+    &__text {
+        margin: 16px 0 0 16px;
+    }
+    &__button-img {
+        position: absolute;
+        right: 16px;
+        bottom: 16px;
+    }
+    &__show-all{
+        display: none;
+    }
+    }
+
+
+@media (min-width: 768px) {
+    .technics {
+        position: relative;
+        box-sizing: border-box;
+        width: 100%;
+        overflow: hidden;
+        &__title{
+            margin-bottom: 24px;
+        }
+        &__container {
+            display:flex;
+        flex-direction:column;
+        }
+        &__slider {
+            width: 768px;
+        align-self:center;
+        display:flex;
+        padding-top: 0;
+        margin: 0px 0px 8px 0px;
+        
+    }
+    &__list {
+        padding:0 0 0 24px;
+        display: flex;
+        gap: 16px 24px;
+        flex-wrap: wrap;
+        overflow: hidden;
+        height: 165px;
+        animation-name: showTecClose;
+        animation-direction: alternate;
+        animation-duration: 1s;
+        animation-fill-mode: both;
+          &--active{
+                animation-name: showTecOpen;
+                animation-direction: alternate;
+                animation-duration: 1s;
+                animation-fill-mode: both;
+            }  
+    }
+
+    &__item {
+        width: 222px;
+    }
+    &__item-container { 
+        width: 222px;
+    }
+    &__show-all{
+        display: flex;
+        margin-bottom: 32px;
+    }
+    }
+}
+
+
+
+@media (min-width: 1000px) {
+    .technics {
+        &__slider { 
+            width: 1000px;
+        }
+        &__list {
+            gap: 16px 20px;
+        }
+        &__item {
+            width: 222px;
+        }
+        &__item-container { 
+            width: 222px;
+        }
+    }
+}
+
+@media (min-width: 1366px) {
+    .technics {
+        &__slider { 
+        width: 1100px;
+        }
+        &__list {
+            gap: 16px 24px;
+            padding:0 0 0 32px;
+        }
+        &__item {
+            width: 238px;
+        }
+        &__item-container { 
+            width: 238px;
+        }
+        &__show-all{
+            margin-bottom: 50px;
+        }
+    }
+}
+    
+@keyframes showTecOpen{
+    0% {
+        height: 165px;
+    }
+    100%{
+        height: 550px;
+    }
+}
+
+@keyframes showTecClose{
+    0% {
+        height: 550px;
+    }
+    100%{
+        height: 165px;
+    }
+}
+
+@media (min-width: 1000px) {
+    @keyframes showTecOpen{
+        0% {
+            height: 165px;
+        }
+        100%{
+            height: 350px;
+        }
+    }
+    
+    @keyframes showTecClose{
+        0% {
+            height: 350px;
+        }
+        100%{
+            height: 165px;
+        }
+    }
+}

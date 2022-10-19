@@ -1,0 +1,96 @@
+
+.header {
+    &__body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 88px;
+    padding: 0 16px;
+    background:$background;
+    }
+
+    &__burger-btn {
+        background: url('../img/img-btn/burger.svg') no-repeat;
+    }
+    
+    &__contacts {
+        display: none;
+    }
+    
+    &__call {
+        background: url('../img/img-btn/call.svg') no-repeat;
+    }
+    
+    &__chat {
+        background: url('../img/img-btn/chat.svg') no-repeat;
+    }
+    
+    &__profile {
+        background: url('../img/img-btn/profile.svg') no-repeat;
+    }
+
+    &__services {
+        display: flex;
+    &::before{
+        content: '';
+        width: 2px;
+        height: 32px;
+        background: $border2;
+        border-radius: 1px;
+        margin-right: 16px;
+        margin-top: 4px;
+    }
+    }
+    
+    &__repair-btn {
+        background: url('../img/img-btn/repair.svg') no-repeat;
+        margin: 0 16px 0 0;
+    }
+    
+    &__checkstatus-btn {
+        background: url('../img/img-btn/checkstatus.svg') no-repeat;
+    }
+}
+
+    @media(min-width: 768px) {
+        .header{
+            &__body{
+                display: flex;
+            height: 88px;
+            padding: 0 24px 0 24px;
+            }
+            &__burger{
+                display: flex;
+            }
+            &__burger::after {
+                content: '';
+                width: 2px;
+                height: 32px;
+                background: $border2;
+                border-radius: 1px;
+                margin-left: 20px;
+                margin-right: 20px;
+                margin-top: 4px;
+            }
+            &__contacts{
+                display: flex;
+                text-align: center;
+                margin-left: auto;
+            }
+            &__conteiner-contacts{
+                display: flex;
+                padding-left: auto;
+                padding-right: 20px;
+            }
+            &__chat{
+                margin: 0 16px 0 16px;
+            }
+        }
+}
+@media(min-width: 1366px) {
+    .header{
+        display: none;
+    }
+}
+            
+        
