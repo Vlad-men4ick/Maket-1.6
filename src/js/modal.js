@@ -7,10 +7,16 @@ export const modal = () => {
     const title = document.querySelector('.modal__title');
 
     // const form = document.querySelector('.modal__form');
-    // const modalSubmit = document.querySelector('.modal__submit');
+    const modalSubmit = document.querySelector('.modal__submit');
 
     const none = document.querySelectorAll('.none');
 
+
+//  ------- отмена действия по умолчанию при отправки формы ------
+
+    modalSubmit.addEventListener('click', function(evt){
+        evt.preventDefault();
+    })
 
 
 // --------- feedback--------------
